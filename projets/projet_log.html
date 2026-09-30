@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projet — Alexandre Pech--Rossell</title>
+    <meta name="description" content="Fiche détaillée d'un projet.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div id="site-header"></div>
+    <main id="contenu" class="container">
+        <section class="page-hero reveal"><a class="back-link" href="../projets.html">← Retour aux projets</a>
+            <div class="section-kicker mt-4">BTS · 2024</div>
+            <h1>Plateforme de gestion logistique.</h1>
+            <p>Un système numérique pour optimiser le suivi, l'organisation et la traçabilité des colis dans les camions de transport.</p>
+            <div class="thumb t1 hero-visual mt-5 image-card">
+                <img src="../images/livraison.png" alt="Aperçu de la plateforme de gestion logistique">
+            </div>
+        </section>
+        <div class="content-grid">
+            <div>
+                <section class="content-section reveal">
+                    <h2>Contexte et problématique</h2>
+                    <p>Dans le cadre de l’optimisation de la gestion des colis pour les livraisons, ce projet vise à
+                        développer un système de gestion numérique des colis destiné à faciliter le suivi et
+                        l’organisation des livraisons pour une entreprise de transport. Ce système permettra de
+                        localiser précisément chaque colis dans les camions de transport, en optimisant leur
+                        organisation et en garantissant une traçabilité tout au long du parcours, depuis leur prise en
+                        charge jusqu’à leur destination finale.</p>
+                </section>
+                <section class="content-section reveal">
+                    <h2>Objectifs</h2>
+                    <p>L’application doit permettre aux agents de transport de :
+                       <li>Chaque sac de transport (ou "bag") est muni d’un QR code unique. En scannant ce
+                        QR code, l’agent associe chaque colis au sac spécifique où il est placé, facilitant
+                        ainsi l'organisation et la gestion des colis dans le camion.</li> 
+                        <li>Scanner le QR code du niveau de profondeur : Ensuite, l’agent scanne un QR code
+                        indiquant le niveau de profondeur dans le sac de transport. Cela permet de localiser
+                        le colis précisément dans le sac, même en cas de superposition avec d’autres colis,
+                        et facilite la recherche de colis spécifiques.</li>
+                        
+                       <li>Scanner le QR code unique du colis : Enfin, chaque colis possède un QR code
+                        unique. Le scan de ce code associe le colis aux informations précédentes (sac de
+                        transport et niveau de profondeur), et enregistre ces données dans la base de
+                        données centrale de l’entreprise.</li></p>
+                </section>
+                <section class="content-section reveal">
+                    <h2>Missions principales</h2>
+                    <ol>
+                        <li>Analyse du cahier des charges</li>
+                        <li>Création du devis</li>
+                        <li>Créer les tâches sur Trello et les attribuer aux différents membres de l'équipe</li>
+                        <li>Page d'accueil</li>
+                        <li>Gestion du scanner de QR code Front-end et Back-end</li>
+                        <li>Passage du code sur SonarQube pour les failles et la qualité du code</li>
+                    </ol>
+                </section>
+                <section class="content-section reveal">
+                    <h2>Étapes de réalisation</h2>
+                    <ol>
+                        <li>Analyse du besoin du client.</li>
+                        <li>Division des tâches.</li>
+                        <li>Création d'une maquette.</li>
+                        <li>Retour avec le client sur la maquette</li>
+                        <li>Développement de la solution</li>
+                        <li>Réalisation des tests unitaires et d'intégration</li>
+                        <li>Passage du code sur SonarQube et débogage</li>
+                        <li>Livraison de la solution</li>
+                    </ol>
+                </section>
+                <section class="content-section reveal">
+                    <h2>En images</h2>
+                    <div class="entries">
+                        <div class="thumb t2 image-card">
+                            <img src="../images/livraison.png" alt="livraison d'un colis dans un camion de transport">
+                        </div>
+
+                        <div class="thumb t3 image-card">
+                            <img src="../images/colis.png" alt="colis dans un camion de transport">
+                        </div>
+                    </div>
+                </section>
+                <section class="content-section reveal">
+                    <h2>Ce que j'en retiens</h2>
+                    <p>C'était notre premier projet avec un client réel et on n'était pas forcément prêts au début, mais avec de la communication
+                        dans l'équipe et avec le client, on a réussi à mener ce projet à bien. Le plus dur a été de faire fonctionner tout le code ensemble,
+                        car chacun avait une branche et on ne faisait pas de merge régulièrement, donc c'était très complexe à la fin.
+                    </p>
+                </section>
+            </div>
+            <aside class="side reveal">
+                <h3 class="h5">Compétences mobilisées</h3>
+                <div class="skill-list mb-4"><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">nodeJS</span><span class="skill">PHP</span>
+                    <span class="skill">JavaScript</span><span
+                        class="skill">Conception et réalisation d'une base de données</span><span class="skill">Réalisation de tests</span></div>
+                <h3 class="h5">Outils</h3>
+                <div class="skill-list"><span class="skill">Github</span><span class="skill">IDE</span><span class="skill">Trello</span><span class="skill">MongoDB</span></div>
+            </aside>
+        </div>
+    </main>
+    <div id="site-footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
