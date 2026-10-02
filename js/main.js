@@ -4,7 +4,7 @@ const PAGES = [
   ["index.html", "Accueil"],
   ["a-propos.html", "À propos"],
   ["projets.html", "Projets"],
-  ["numerique-responsable.html", "Numérique responsable"],
+  ["construction.html", "Numérique responsable"],
   ["cv.html", "CV"],
   ["contact.html", "Contact"]
 ];
