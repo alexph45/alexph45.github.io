@@ -267,7 +267,7 @@ p {
   max-width: 850px
 }
 
-.hero h1 .accent {
+.hero h1,h2 .accent {
   color: var(--accent)
 }
 
@@ -1103,5 +1103,523 @@ body.lightbox-open {
   .reveal {
     opacity: 1;
     transform: none
+  }
+}
+
+/* =========================================================
+   VARIANTE V2 — identité développeur plus personnelle
+   HTML et JavaScript inchangés
+   ========================================================= */
+
+/* Palette : moins "template", plus éditoriale */
+:root {
+  --bg: #f6f5f1;
+  --bg-soft: #eceae4;
+  --surface: #fbfaf7;
+  --surface-solid: #fbfaf7;
+  --text: #171918;
+  --muted: #68706b;
+  --line: #d9ddd8;
+
+  --accent: #16734f;
+  --accent-2: #d8e8df;
+  --accent-dark: #0d5b3d;
+
+  --shadow: 0 18px 45px rgba(23, 25, 24, .08);
+  --shadow-sm: 0 5px 18px rgba(23, 25, 24, .055);
+
+  --radius: 14px;
+  --nav-h: 70px;
+}
+
+html[data-theme="dark"] {
+  --bg: #111412;
+  --bg-soft: #1b201d;
+  --surface: #171b18;
+  --surface-solid: #171b18;
+  --text: #edf1ed;
+  --muted: #a1aaa4;
+  --line: #303833;
+
+  --accent: #58bf8d;
+  --accent-2: #20372c;
+  --accent-dark: #79d3a5;
+
+  --shadow: 0 18px 50px rgba(0, 0, 0, .25);
+  --shadow-sm: 0 5px 20px rgba(0, 0, 0, .18);
+}
+
+/* Fond plus calme : on garde une légère matière */
+body {
+  background:
+    linear-gradient(
+      180deg,
+      var(--bg) 0%,
+      var(--bg) 78%,
+      var(--bg-soft) 100%
+    );
+}
+
+/* On remplace la grille "IA portfolio" par un détail presque invisible */
+body::before {
+  opacity: .45;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 55%);
+}
+
+/* Navigation : moins capsule, plus vraie barre de site */
+.site-nav {
+  top: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--surface-solid) 94%, transparent);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  min-height: var(--nav-h);
+}
+
+.logo {
+  font-size: 1rem;
+  letter-spacing: -.025em;
+}
+
+.logo-dot {
+  width: 6px;
+  height: 6px;
+  margin-left: 4px;
+  box-shadow: none;
+}
+
+.nav-link {
+  position: relative;
+  padding: .45rem .7rem !important;
+  border-radius: 4px;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: transparent;
+  color: var(--text) !important;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: .7rem;
+  right: .7rem;
+  bottom: .12rem;
+  height: 2px;
+  background: var(--accent);
+}
+
+.nav-link.active {
+  box-shadow: none;
+}
+
+/* Bouton thème plus discret */
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.theme-toggle:hover {
+  transform: none;
+  background: var(--bg-soft);
+}
+
+/* Progression très fine */
+#scroll-progress {
+  height: 2px;
+  box-shadow: none;
+}
+
+/* Titres : moins "landing page IA", plus éditorial */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -.045em;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+/* Le kicker devient une vraie annotation technique */
+.eyebrow {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: .72rem;
+  letter-spacing: .12em;
+}
+
+.eyebrow::before {
+  width: 5px;
+  height: 5px;
+  box-shadow: none;
+}
+
+/* Hero : beaucoup plus de respiration */
+.hero {
+  padding: clamp(90px, 12vw, 155px) 0 110px;
+}
+
+.hero-grid {
+  gap: 90px;
+}
+
+.hero h1 {
+  margin: 20px 0 28px;
+}
+
+/* Boutons moins "pill" */
+.btn {
+  border-radius: 7px;
+  padding: .72rem 1.1rem;
+  font-weight: 700;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+/* Carte de code : on garde le côté développeur,
+   mais avec un traitement plus proche d'un vrai éditeur */
+.code-card {
+  border-radius: 10px;
+  box-shadow: 18px 22px 55px rgba(8, 45, 29, .18);
+  transform: rotate(.6deg);
+}
+
+.code-card:hover {
+  transform: rotate(0) translateY(-4px);
+}
+
+.code-glow {
+  opacity: .08;
+  filter: blur(100px);
+}
+
+.code-top {
+  padding: 12px 16px;
+}
+
+.code-body {
+  padding: 24px 26px 30px;
+}
+
+/* Le badge flottant devient une annotation */
+.floating-badge {
+  right: -12px;
+  bottom: 18px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  animation: none;
+}
+
+/* Sections */
+.section {
+  padding: 105px 0;
+}
+
+.section-head {
+  margin-bottom: 42px;
+}
+
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .7rem;
+  letter-spacing: .16em;
+}
+
+.section-kicker::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* Les cartes ne sont plus toutes identiques */
+.stat,
+.entry,
+.project-card,
+.side,
+.contact-card,
+.skill-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Statistiques */
+.stat {
+  border-radius: 8px;
+  border-top: 2px solid var(--accent);
+}
+
+.stat strong {
+  font-size: 1.8rem;
+}
+
+/* Entrées / expériences */
+.entry {
+  border-radius: 8px;
+  min-height: 210px;
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    background .3s ease;
+}
+
+.entry::after {
+  content: "→";
+  right: 22px;
+  top: 20px;
+  font-size: 1rem;
+}
+
+.entry:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: none;
+  background: var(--surface-solid);
+}
+
+.entry h3 {
+  margin-top: 48px;
+}
+
+/* Projets : plus "case study" que carte */
+.project-list {
+  gap: 28px;
+}
+
+.project-card {
+  position: relative;
+  grid-template-columns: 1fr .95fr;
+  gap: 50px;
+  padding: 0;
+  border-radius: 10px;
+  transition:
+    transform .3s ease,
+    border-color .3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.project-info {
+  padding: 38px;
+}
+
+.project-tag {
+  display: inline-block;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--accent);
+  font-size: .68rem;
+  letter-spacing: .08em;
+}
+
+.project-card h2 {
+  margin: 18px 0 14px;
+  line-height: 1.05;
+}
+
+.project-card p {
+  max-width: 48ch;
+}
+
+/* Image : moins d'effet "carte UI" */
+.thumb {
+  height: 100%;
+  min-height: 280px;
+  aspect-ratio: auto;
+  border-radius: 0 9px 9px 0;
+  background: var(--bg-soft);
+}
+
+.thumb::before {
+  display: none;
+}
+
+.project-card:hover .thumb {
+  transform: none;
+}
+
+.image-card img {
+  transition: transform .55s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.015);
+  filter: none;
+}
+
+/* Pages internes */
+.page-hero {
+  padding: 105px 0 65px;
+}
+
+.page-hero h1 {
+  max-width: 1000px;
+}
+
+/* Sidebar */
+.side {
+  border-radius: 10px;
+}
+
+/* Compétences : conserver le langage technique */
+.skill {
+  border-radius: 5px;
+  padding: 7px 10px;
+  background: var(--bg-soft);
+  border: 0;
+  font-size: .72rem;
+}
+
+/* Timeline plus proche d'un parcours technique */
+.timeline {
+  border-left: 1px solid var(--line);
+}
+
+.timeline-item::before {
+  width: 7px;
+  height: 7px;
+  left: -34px;
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+/* Formulaire */
+.form-control {
+  border-radius: 7px;
+  box-shadow: none;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+/* Footer plus structuré */
+footer {
+  margin-top: 100px;
+  padding: 36px 0 45px;
+}
+
+/* Reveal plus discret */
+.reveal {
+  transform: translateY(14px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+
+/* On supprime le gros halo sous le curseur */
+.cursor-glow {
+  width: 170px;
+  height: 170px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(22, 115, 79, .035),
+      transparent 68%
+    );
+}
+
+/* Lightbox plus sobre */
+.image-lightbox {
+  background: rgba(12, 15, 13, .94);
+}
+
+.image-lightbox img {
+  border-radius: 8px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .4);
+}
+
+.image-lightbox-close {
+  border-radius: 8px;
+  background: transparent;
+  border-color: rgba(255,255,255,.25);
+}
+
+.image-lightbox-close:hover {
+  transform: none;
+  background: rgba(255,255,255,.12);
+}
+
+/* Mobile */
+@media(max-width: 991px) {
+  .site-nav {
+    margin: 0;
+  }
+
+  .nav-link.active::after {
+    left: 0;
+    right: auto;
+    width: 24px;
+    bottom: 0;
+  }
+
+  .project-card {
+    gap: 0;
+  }
+
+  .project-info {
+    padding: 30px;
+  }
+
+  .thumb {
+    min-height: 240px;
+    border-radius: 0 0 9px 9px;
+  }
+}
+
+@media(max-width: 767px) {
+  .hero {
+    padding: 75px 0 70px;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .page-hero {
+    padding: 70px 0 45px;
+  }
+
+  .project-info {
+    padding: 26px;
+  }
+
+  .thumb {
+    min-height: 210px;
   }
 }
